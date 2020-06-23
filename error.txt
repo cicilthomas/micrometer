@@ -1,0 +1,101 @@
+ .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.1.RELEASE)
+
+2020-06-23 13:25:28.927  INFO [,,,] 61025 --- [           main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2020-06-23 13:25:29.497  INFO [,,,] 61025 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=2fb5b381-bfc2-3f72-aa5d-4343ce43d8f2
+2020-06-23 13:25:29.843  INFO [,,,] 61025 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-23 13:25:29.849  INFO [,,,] 61025 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-23 13:25:29.850  INFO [,,,] 61025 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-06-23 13:25:29.929  INFO [,,,] 61025 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-23 13:25:29.929  INFO [,,,] 61025 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 991 ms
+2020-06-23 13:25:30.630  INFO [,,,] 61025 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-23 13:25:30.909  INFO [,,,] 61025 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-06-23 13:25:30.975  INFO [,,,] 61025 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-23 13:25:30.993  INFO [,,,] 61025 --- [           main] com.example.demo.DemoApplication         : Started DemoApplication in 2.428 seconds (JVM running for 3.036)
+2020-06-23 13:25:31.040  INFO [,,,] 61025 --- [)-10.10.101.250] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-23 13:25:31.041  INFO [,,,] 61025 --- [)-10.10.101.250] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-23 13:25:31.052  INFO [,,,] 61025 --- [)-10.10.101.250] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-06-23 15:01:00.296 ERROR [,,,] 61025 --- [    parallel-16] i.m.s.i.netty.util.ResourceLeakDetector  : LEAK: ByteBuf.release() was not called before it's garbage-collected. See https://netty.io/wiki/reference-counted-objects.html for more information.
+Recent access records: 
+Created at:
+	io.micrometer.shaded.io.netty.buffer.PooledByteBufAllocator.newDirectBuffer(PooledByteBufAllocator.java:363)
+	io.micrometer.shaded.io.netty.buffer.AbstractByteBufAllocator.directBuffer(AbstractByteBufAllocator.java:187)
+	io.micrometer.shaded.io.netty.buffer.AbstractByteBufAllocator.directBuffer(AbstractByteBufAllocator.java:173)
+	io.micrometer.shaded.io.netty.buffer.AbstractByteBufAllocator.buffer(AbstractByteBufAllocator.java:107)
+	io.micrometer.shaded.reactor.netty.NettyOutbound.lambda$sendString$5(NettyOutbound.java:300)
+	io.micrometer.shaded.reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:100)
+	io.micrometer.shaded.reactor.core.publisher.FluxOnBackpressureLatest$LatestSubscriber.drain(FluxOnBackpressureLatest.java:176)
+	io.micrometer.shaded.reactor.core.publisher.FluxOnBackpressureLatest$LatestSubscriber.onNext(FluxOnBackpressureLatest.java:127)
+	io.micrometer.shaded.reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:114)
+	io.micrometer.shaded.reactor.core.publisher.FluxBufferPredicate$BufferPredicateSubscriber.onNextNewBuffer(FluxBufferPredicate.java:269)
+	io.micrometer.shaded.reactor.core.publisher.FluxBufferPredicate$BufferPredicateSubscriber.tryOnNext(FluxBufferPredicate.java:216)
+	io.micrometer.shaded.reactor.core.publisher.FluxBufferPredicate$BufferPredicateSubscriber.onNext(FluxBufferPredicate.java:186)
+	io.micrometer.shaded.reactor.core.publisher.FluxFlatMap$FlatMapMain.tryEmit(FluxFlatMap.java:535)
+	io.micrometer.shaded.reactor.core.publisher.FluxFlatMap$FlatMapInner.onNext(FluxFlatMap.java:999)
+	io.micrometer.shaded.reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:192)
+	io.micrometer.shaded.reactor.core.publisher.DirectProcessor$DirectInner.onNext(DirectProcessor.java:333)
+	io.micrometer.shaded.reactor.core.publisher.DirectProcessor.onNext(DirectProcessor.java:142)
+	io.micrometer.shaded.reactor.core.publisher.FluxCreate$IgnoreSink.next(FluxCreate.java:618)
+	io.micrometer.shaded.reactor.core.publisher.FluxCreate$SerializedSink.next(FluxCreate.java:153)
+	io.micrometer.statsd.internal.LogbackMetricsSuppressingFluxSink.lambda$next$1(LogbackMetricsSuppressingFluxSink.java:49)
+	io.micrometer.core.instrument.binder.logging.LogbackMetrics.ignoreMetrics(LogbackMetrics.java:113)
+	io.micrometer.statsd.internal.LogbackMetricsSuppressingFluxSink.next(LogbackMetricsSuppressingFluxSink.java:49)
+	io.micrometer.statsd.internal.LogbackMetricsSuppressingFluxSink.next(LogbackMetricsSuppressingFluxSink.java:25)
+	io.micrometer.statsd.StatsdGauge.poll(StatsdGauge.java:56)
+	io.micrometer.statsd.StatsdMeterRegistry.poll(StatsdMeterRegistry.java:175)
+	io.micrometer.statsd.StatsdMeterRegistry.lambda$startPolling$13(StatsdMeterRegistry.java:282)
+	io.micrometer.shaded.reactor.core.publisher.FluxDoOnEach$DoOnEachSubscriber.onNext(FluxDoOnEach.java:140)
+	io.micrometer.shaded.reactor.core.publisher.FluxInterval$IntervalRunnable.run(FluxInterval.java:123)
+	io.micrometer.shaded.reactor.core.scheduler.PeriodicWorkerTask.call(PeriodicWorkerTask.java:59)
+	io.micrometer.shaded.reactor.core.scheduler.PeriodicWorkerTask.run(PeriodicWorkerTask.java:73)
+	java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	java.base/java.lang.Thread.run(Thread.java:834)
+2020-06-23 15:01:00.305 ERROR [,,,] 61025 --- [    parallel-16] i.m.s.i.netty.util.ResourceLeakDetector  : LEAK: ByteBuf.release() was not called before it's garbage-collected. See https://netty.io/wiki/reference-counted-objects.html for more information.
+Recent access records: 
+Created at:
+	io.micrometer.shaded.io.netty.buffer.PooledByteBufAllocator.newDirectBuffer(PooledByteBufAllocator.java:363)
+	io.micrometer.shaded.io.netty.buffer.AbstractByteBufAllocator.directBuffer(AbstractByteBufAllocator.java:187)
+	io.micrometer.shaded.io.netty.buffer.AbstractByteBufAllocator.directBuffer(AbstractByteBufAllocator.java:173)
+	io.micrometer.shaded.io.netty.buffer.AbstractByteBufAllocator.buffer(AbstractByteBufAllocator.java:107)
+	io.micrometer.shaded.reactor.netty.NettyOutbound.lambda$sendString$5(NettyOutbound.java:300)
+	io.micrometer.shaded.reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:100)
+	io.micrometer.shaded.reactor.core.publisher.FluxOnBackpressureLatest$LatestSubscriber.drain(FluxOnBackpressureLatest.java:176)
+	io.micrometer.shaded.reactor.core.publisher.FluxOnBackpressureLatest$LatestSubscriber.onNext(FluxOnBackpressureLatest.java:127)
+	io.micrometer.shaded.reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:114)
+	io.micrometer.shaded.reactor.core.publisher.FluxBufferPredicate$BufferPredicateSubscriber.onNextNewBuffer(FluxBufferPredicate.java:269)
+	io.micrometer.shaded.reactor.core.publisher.FluxBufferPredicate$BufferPredicateSubscriber.tryOnNext(FluxBufferPredicate.java:216)
+	io.micrometer.shaded.reactor.core.publisher.FluxBufferPredicate$BufferPredicateSubscriber.onNext(FluxBufferPredicate.java:186)
+	io.micrometer.shaded.reactor.core.publisher.FluxFlatMap$FlatMapMain.tryEmit(FluxFlatMap.java:535)
+	io.micrometer.shaded.reactor.core.publisher.FluxFlatMap$FlatMapInner.onNext(FluxFlatMap.java:999)
+	io.micrometer.shaded.reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:192)
+	io.micrometer.shaded.reactor.core.publisher.DirectProcessor$DirectInner.onNext(DirectProcessor.java:333)
+	io.micrometer.shaded.reactor.core.publisher.DirectProcessor.onNext(DirectProcessor.java:142)
+	io.micrometer.shaded.reactor.core.publisher.FluxCreate$IgnoreSink.next(FluxCreate.java:618)
+	io.micrometer.shaded.reactor.core.publisher.FluxCreate$SerializedSink.drainLoop(FluxCreate.java:248)
+	io.micrometer.shaded.reactor.core.publisher.FluxCreate$SerializedSink.next(FluxCreate.java:168)
+	io.micrometer.statsd.internal.LogbackMetricsSuppressingFluxSink.lambda$next$1(LogbackMetricsSuppressingFluxSink.java:49)
+	io.micrometer.core.instrument.binder.logging.LogbackMetrics.ignoreMetrics(LogbackMetrics.java:113)
+	io.micrometer.statsd.internal.LogbackMetricsSuppressingFluxSink.next(LogbackMetricsSuppressingFluxSink.java:49)
+	io.micrometer.statsd.internal.LogbackMetricsSuppressingFluxSink.next(LogbackMetricsSuppressingFluxSink.java:25)
+	io.micrometer.statsd.StatsdGauge.poll(StatsdGauge.java:56)
+	io.micrometer.statsd.StatsdMeterRegistry.poll(StatsdMeterRegistry.java:175)
+	io.micrometer.statsd.StatsdMeterRegistry.lambda$startPolling$13(StatsdMeterRegistry.java:282)
+	io.micrometer.shaded.reactor.core.publisher.FluxDoOnEach$DoOnEachSubscriber.onNext(FluxDoOnEach.java:140)
+	io.micrometer.shaded.reactor.core.publisher.FluxInterval$IntervalRunnable.run(FluxInterval.java:123)
+	io.micrometer.shaded.reactor.core.scheduler.PeriodicWorkerTask.call(PeriodicWorkerTask.java:59)
+	io.micrometer.shaded.reactor.core.scheduler.PeriodicWorkerTask.run(PeriodicWorkerTask.java:73)
+	java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	java.base/java.lang.Thread.run(Thread.java:834)
